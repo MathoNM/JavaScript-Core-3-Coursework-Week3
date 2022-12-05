@@ -6,3 +6,21 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+function printReceipt(orders) {
+  let total = 0;
+
+  console.log("QTY \t ITEM \t\t\t TOTAL \t");
+
+  orders.forEach((item) => {
+    let { quantity, itemName, unitPrice } = item;
+    console.log(
+      `${quantity}\t ${itemName}\t\t ${(unitPrice * quantity).toFixed(2)}`
+    );
+    total += unitPrice * quantity;
+  });
+
+  console.log("TOTAL: \t" + total);
+}
+
+printReceipt(order);
